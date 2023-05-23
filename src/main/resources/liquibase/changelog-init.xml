@@ -1,0 +1,84 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:pro="http://www.liquibase.org/xml/ns/pro"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd
+                        http://www.liquibase.org/xml/ns/pro http://www.liquibase.org/xml/ns/pro/liquibase-pro-4.1.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.1.xsd">
+
+    <changeSet author="mohamad.aldi" id="1">
+        <createTable tableName="fruits">
+            <column name="fruit_id" type="uuid">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="fruitPK" />
+            </column>
+            <column name="created_at" type="TIMESTAMP WITHOUT TIME ZONE"
+                defaultValueComputed="${now}">
+                <constraints nullable="false" />
+            </column>
+            <column name="modified_at" type="TIMESTAMP WITHOUT TIME ZONE" />
+            <column name="fruit_name" type="VARCHAR(250)" />
+            <column name="description" type="text" />
+            <column name="expiration_date" type="TIMESTAMP WITHOUT TIME ZONE"
+                defaultValueComputed="${now}">
+                <constraints nullable="false" />
+            </column>
+            <column name="sync_version" type="bigint" />
+            <column name="quantity" type="int" />
+        </createTable>
+    </changeSet>
+    <changeSet author="mohamad.aldi" id="2">
+        <insert tableName="fruits">
+            <column name="fruit_id" value="86907f40-d84e-45b0-9a30-6220a5237b5d" />
+            <column name="fruit_name" value="Apple" />
+            <column name="description" value="This is an apple" />
+            <column name="sync_version" value="1" />
+            <column name="quantity" value="100" />
+        </insert>
+    </changeSet>
+    <changeSet author="mohamad.aldi" id="3">
+        <insert tableName="fruits">
+            <column name="fruit_id" value="dea95967-cc4b-4002-911c-3518bcb90dc7" />
+            <column name="fruit_name" value="Banana" />
+            <column name="description" value="This is a banana" />
+            <column name="sync_version" value="1" />
+            <column name="quantity" value="200" />
+        </insert>
+    </changeSet>
+    <changeSet author="mohamad.aldi" id="4">
+        <insert tableName="fruits">
+            <column name="fruit_id" value="632d4acd-99a8-4dd4-9a3c-c85e285466a2" />
+            <column name="fruit_name" value="Pineapple" />
+            <column name="description" value="This is a pineapple" />
+            <column name="sync_version" value="1" />
+            <column name="quantity" value="300" />
+        </insert>
+    </changeSet>
+    <changeSet author="mohamad.aldi" id="5">
+        <insert tableName="fruits">
+            <column name="fruit_id" value="8832aa26-4fbb-4433-b9f2-d5a5543d90a8" />
+            <column name="fruit_name" value="Watermelon" />
+            <column name="description" value="This is a watermelon" />
+            <column name="sync_version" value="1" />
+            <column name="quantity" value="290" />
+        </insert>
+    </changeSet>
+    <changeSet author="mohamad.aldi" id="6">
+        <insert tableName="fruits">
+            <column name="fruit_id" value="48a8bfc2-d751-4331-9d0e-ce06848750bb" />
+            <column name="fruit_name" value="Orange" />
+            <column name="description" value="This is an orange" />
+            <column name="sync_version" value="1" />
+            <column name="quantity" value="700" />
+        </insert>
+    </changeSet>
+    <changeSet author="mohamad.aldi" id="7">
+        <insert tableName="fruits">
+            <column name="fruit_id" value="6686a0bd-ba95-4354-b820-ea14e70b9193" />
+            <column name="fruit_name" value="Durian" />
+            <column name="description" value="This is a durian" />
+            <column name="sync_version" value="1" />
+            <column name="quantity" value="450" />
+        </insert>
+    </changeSet>
+</databaseChangeLog>
